@@ -41,18 +41,23 @@ color: Green;}
 	</table>
 <h3>=========================================</h3>
 
-    <div id="passwords">
-        <div class="password">HUNGRY</div>
-        <div class="password">BUZZED</div>
-        <div class="password">LOVELY</div>
-        <div class="password">HIJACK</div>
-        <div class="password">QUARTZ</div>
-        <div class="password">JOCKEY</div>
-        <div class="password">COMMON</div>
-        <div class="password">STONKS</div>
-    </div>
+
     
-    <div id="message"></div>
+    <div id="message">ENTER PASSWORD NOW:</div>
+    
+<h3>
+        0xF964 <a class="password">HUNGRY</a>
+        0xF965 <a class="password">BUZZED</a>
+        <br/>
+        0xF966 <a class="password">LOVELY</a>
+        0xF967 <a class="password">HIJACK</a>
+        <br/>
+        0xF968 <a class="password">QUARTZ</a>
+        0xF969 <a class="password">JOCKEY</a>
+        <br/>
+        0xF970 <a class="password">COMMON</a>
+        0xF971 <a class="password">STONKS</a>
+    </h3>
     
     <script>
         var passwordAttempts = 0;
@@ -65,7 +70,7 @@ color: Green;}
                 var selectedPassword = this.innerHTML;
                 if (selectedPassword === password) {
                     // Redirect to another site when correct password is selected
-                    window.location.href = "https://www.example.com"; // Change this to the desired redirect URL
+                    window.location.href = "ABM2.html"; // Change this to the desired redirect URL
                 } else {
                     passwordAttempts++;
                     if (passwordAttempts >= 4) {
@@ -80,4 +85,6 @@ color: Green;}
             });
         }
     </script>
+</body>
+</html>
  </body>

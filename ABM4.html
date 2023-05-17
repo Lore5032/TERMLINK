@@ -14,6 +14,53 @@ a:hover {background: none;
 color: Green;}
 -->
 </style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Array of potential passwords
+    var passwords = ["HUNGRY", "BUZZED", "LOVELY", "HIJACK", "QUARTZ", "JOCKEY", "COMMON", "STONKS"];
+
+    // Generate a random password from the array
+    var password = passwords[Math.floor(Math.random() * passwords.length)];
+
+    // Counter for remaining chances
+    var chancesLeft = 4;
+
+    // Function to check if the guessed password is correct
+    function checkPassword(guess) {
+      if (guess === password) {
+        // Redirect to another website if the password is correct
+        window.location.href = "ABM2";
+      } else {
+        // Display an error message if the password is incorrect
+        chancesLeft--;
+        if (chancesLeft > 0) {
+          $("#message").text("Incorrect password. " + chancesLeft + " chances remaining.");
+          $("#password-input").val("");
+          generateRandomString();
+        } else {
+          $("#message").text("Terminal Locked. Please contact an administrator.");
+          $("#password-input").prop("disabled", true);
+        }
+      }
+    }
+
+    // Function to handle the form submission
+    function submitForm() {
+      var guess = $("#password-input").val().toUpperCase();
+      checkPassword(guess);
+      return false; // Prevent form submission
+    }
+
+    // Function to generate random string of 6 letters and numbers
+    function generateRandomString() {
+      var randomString = Math.random().toString(36).substring(2, 8).toUpperCase();
+      $("#random-string").text(randomString);
+    }
+
+    // Generate initial random string
+    generateRandomString();
+  </script>
 </head>
 <body>
 	 <div class="audio-container">
@@ -41,10 +88,10 @@ color: Green;}
 	</table>
 <h3>=========================================</h3>
 
- <div id="demo2"></div>
- <script src="typing2.js"></script>
- <h3>0xF964 <a href="ABM3.html">HUNGRY</a> 0xF965 <a href="ABM3.html">BUZZED</a><br/>
-0xF966 <a href="ABM3.html">LOVELY</a> 0xF967 <a href="ABM3.html">HIJACK</a><br/>
-0xF968 <a href="ABM3.html">QUARTZ</a> 0xF969 <a href="ABM3.html">JOCKEY</a><br/>
-0xF970 <a href="ABM3.html">COMMON</a> 0xF971 <a href="ABM2.html">STONKS</a></h3>
+	  <p id="message">ENTER PASSWORD NOW:</p>
+  <form onsubmit="return submitForm()">
+    <input type="text" id="password-input">
+    <input type="submit" value="Submit">
+  </form>
+   
  </body>

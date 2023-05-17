@@ -5,8 +5,8 @@ background-image:url('Rdb51d860e48be930fc2c983d43bdc46f.png');
 a {text-decoration: none}
 td {font-weight:bolder; text-align:center}
 background {background-position: no-repeat}
-p {color:Green;}
-  
+color: green;
+}
 .audio-container {
   position: fixed;
   bottom: 0;

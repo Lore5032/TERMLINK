@@ -1,53 +1,57 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
+
 <head>
-    <title>RobCo Terminal</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #0F0;
-            font-family: monospace;
-            padding: 20px;
-        }
-        
-        .terminal {
-            background-color: #000;
-            border: 2px solid #0F0;
-            padding: 20px;
-            width: 400px;
-            height: 300px;
-            overflow-y: scroll;
-            font-size: 14px;
-        }
-        
-        .terminal-input {
-            color: #0F0;
-        }
-    </style>
+  <link rel="stylesheet" href="typing.css">
+	<link rel="stylesheet" type="text/css" href="terminal.min.css" />
+	<title>TermCo Industries (TM) Termalink Protocol</title>
+	<style>
+		< !-- a {
+			text-decoration: none;
+			color: Green;
+		}
+
+		a:hover {
+			background: none;
+			color: Green;
+		}
+
+		-->
+	</style>
+  <meta http-equiv="refresh" content="70;url=https://termlink.sledgehammer.repl.co/ABM4.html">
 </head>
+
 <body>
-    <div class="terminal" id="terminal">
-        <p>Welcome to RobCo Terminal</p>
-    </div>
+  <div class="audio-container">
+    <audio class="audio" autoplay loop>
+      <source src="ambient-sound.mp3" type="audio/mpeg"> <!-- Replace with your own sound file -->
+    </audio>
+  </div>
+	<table>
+		<tr>
+			<td>
+				WINTERS INDUSTRIES UNIFIED OPERATING SYSTEM
+			</td>
+		</tr>
+		<tr>
+			<td>
+				COPYRIGHT 1987-1995 WINTERS INDUSTRIES
+			</td>
+		</tr>
+		<tr>
+			<td>
+				--SERVER 1--
+			</td>
+		</tr>
+	</table>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const terminal = document.getElementById('terminal');
-            const input = document.createElement('input');
-            input.classList.add('terminal-input');
-            terminal.appendChild(input);
+  <p></p>
 
-            input.addEventListener('keydown', function(event) {
-                if (event.key === 'Enter') {
-                    event.preventDefault();
-                    const command = input.value;
-                    const output = document.createElement('p');
-                    output.innerText = `$ ${command}`;
-                    terminal.appendChild(output);
-                    input.value = '';
-                }
-            });
-        });
-    </script>
+  <h3>=========================================</h3> 
+  <div id="demo"></div>
+ <script src="typing.js"></script>
+ <h3>=====================<h3>
 </body>
+
 </html>

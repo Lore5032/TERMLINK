@@ -1,0 +1,45 @@
+body {
+  background-color: #000;
+  font-family: 'Lucida Console', monospace;
+}
+
+#terminal {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 10px;
+  width: 600px;
+  margin: 0 auto;
+}
+
+#header {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+
+#footer {
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.green {
+  color: #00ff00;
+}
+
+.white {
+  color: #fff;
+}
+
+.input {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  padding: 5px;
+  font-family: 'Lucida Console', monospace;
+}

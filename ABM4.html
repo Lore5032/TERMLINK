@@ -4,7 +4,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 <meta  charset="utf-8" />
-<title>TermCo Industries (TM) Termalink Protocol</title>
+<title>Winters Industries (TM) Termalink Protocol</title>
 <style>
 <!--
 a {text-decoration: none;
@@ -14,88 +14,23 @@ a:hover {background: none;
 color: Green;}
 -->
 </style>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <style>
-    .password-list {
-      list-style-type: none;
-    }
-  </style>
-  <script>
-    // Array of potential passwords
-    var passwords = ["WORD1", "WORD2", "WORD3", "WORD4", "WORD5"];
-
-    // Generate a random password from the array
-    var password = passwords[Math.floor(Math.random() * passwords.length)];
-
-    // Counter for remaining chances
-    var chancesLeft = 4;
-
-    // Function to check if the guessed password is correct
-    function checkPassword(guess) {
-      if (guess === password) {
-        // Redirect to another website if the password is correct
-        window.location.href = "https://www.example.com";
-      } else {
-        // Display an error message if the password is incorrect
-        chancesLeft--;
-        if (chancesLeft > 0) {
-          $("#message").text("Incorrect password. " + chancesLeft + " chances remaining.");
-          $("#password-input").val("");
-          generatePasswordList();
-        } else {
-          $("#message").text("TERMINAL LOCKED. PLEASE CONTACT AN ADMINISTRATOR");
-          $("#password-input").prop("disabled", true);
-        }
-      }
-    }
-
-    // Function to handle the form submission
-    function submitForm() {
-      var guess = $("#password-input").val().toUpperCase();
-      checkPassword(guess);
-      return false; // Prevent form submission
-    }
-
-    // Function to generate random string of 6 letters and numbers
-    function generateRandomString() {
-      var randomString = Math.random().toString(36).substring(2, 8).toUpperCase();
-      return randomString;
-    }
-
-    // Function to generate the password list with random strings
-    function generatePasswordList() {
-      var passwordList = $("#password-list");
-      passwordList.empty();
-      for (var i = 0; i < passwords.length; i++) {
-        passwordList.append("<li>" + passwords[i] + "</li>");
-        if (i !== passwords.length - 1) {
-          var randomString = generateRandomString();
-          passwordList.append("<li>" + randomString + "</li>");
-        }
-      }
-    }
-
-    // Generate initial password list
-    generatePasswordList();
-  </script>
 </head>
 <body>
-	 <div class="audio-container">
-    <audio class="audio" autoplay loop>
-      <source src="CRT.mp3" type="audio/mpeg"> <!-- Replace with your own sound file -->
-    </audio>
+  <div class="audio-container">
+      <audio class="audio" autoplay loop>
+      	<source src="CRT.mp3" type="audio/mpeg"> <!-- Replace with your own sound file -->
+      </audio>
   </div>
 
 	<table>
 		<tr>
 			<td>
-				TERMCO INDUSTRIES UNIFIED OPERATING SYSTEM
+				WINTERS INDUSTRIES UNIFIED OPERATING SYSTEM
 			</td>
 		</tr>
 		<tr>
 			<td>
-				COPYRIGHT 1987-1995 TERMCO INDUSTRIES
+				COPYRIGHT 1987-1995 WINTERS INDUSTRIES
 			</td>
 		</tr>
 		<tr>
@@ -106,11 +41,43 @@ color: Green;}
 	</table>
 <h3>=========================================</h3>
 
-	  <p id="message">ENTER PASSWORD NOW:</p>
-  <ul id="password-list" class="password-list"></ul>
-  <form onsubmit="return submitForm()">
-    <input type="text" id="password-input">
-    <input type="submit" value="Submit">
-  </form>
-   
+    <div id="passwords">
+        <div class="password">HUNGRY</div>
+        <div class="password">BUZZED</div>
+        <div class="password">LOVELY</div>
+        <div class="password">HIJACK</div>
+        <div class="password">QUARTZ</div>
+        <div class="password">JOCKEY</div>
+        <div class="password">COMMON</div>
+        <div class="password">STONKS</div>
+    </div>
+    
+    <div id="message"></div>
+    
+    <script>
+        var passwordAttempts = 0;
+        var password = "STONKS"; // Change this to the correct password
+        
+        // Attach click event listener to passwords
+        var passwords = document.getElementsByClassName("password");
+        for (var i = 0; i < passwords.length; i++) {
+            passwords[i].addEventListener("click", function() {
+                var selectedPassword = this.innerHTML;
+                if (selectedPassword === password) {
+                    // Redirect to another site when correct password is selected
+                    window.location.href = "https://www.example.com"; // Change this to the desired redirect URL
+                } else {
+                    passwordAttempts++;
+                    if (passwordAttempts >= 4) {
+                        // Display "TERMINAL LOCKED" message when maximum attempts reached
+                        document.getElementById("message").innerHTML = "TERMINAL LOCKED. PLEASE CONTACT AN ADMINISTRATOR";
+                        // Disable password selection
+                        for (var j = 0; j < passwords.length; j++) {
+                            passwords[j].removeEventListener("click", arguments.callee);
+                        }
+                    }
+                }
+            });
+        }
+    </script>
  </body>

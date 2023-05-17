@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>RobCo Terminal</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
-    <div id="terminal">
-      <div id="header">
-        <span class="red">ROBCO INDUSTRIES (TM)</span>
-        <span class="white">TERMINAL</span>
-      </div>
-      <div id="main">
-        <span class="white">Welcome to ROBCO Industries (TM) Termlink</span>
-        <br><br>
-        <span class="white">Password Required</span>
-        <br><br>
-        <span class="white">Attempts Remaining: 3</span>
-        <br><br>
-        <input type="password" name="password" id="password" class="input">
-        <br><br>
-        <span class="green">Access Granted.</span>
-        <br><br>
-        <span class="white">Please enter a command:</span>
-        <br><br>
-        <input type="text" name="command" id="command" class="input">
-      </div>
-      <div id="footer">
-        <span class="white">ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL</span>
-      </div>
+    <style>
+        body {
+            background-color: #000;
+            color: #0F0;
+            font-family: monospace;
+            padding: 20px;
+        }
+        
+        .terminal {
+            background-color: #000;
+            border: 2px solid #0F0;
+            padding: 20px;
+            width: 400px;
+            height: 300px;
+            overflow-y: scroll;
+            font-size: 14px;
+        }
+        
+        .terminal-input {
+            color: #0F0;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal" id="terminal">
+        <p>Welcome to RobCo Terminal</p>
     </div>
-  </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const terminal = document.getElementById('terminal');
+            const input = document.createElement('input');
+            input.classList.add('terminal-input');
+            terminal.appendChild(input);
+
+            input.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+                    const command = input.value;
+                    const output = document.createElement('p');
+                    output.innerText = `$ ${command}`;
+                    terminal.appendChild(output);
+                    input.value = '';
+                }
+            });
+        });
+    </script>
+</body>
 </html>

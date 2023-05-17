@@ -16,9 +16,14 @@ color: Green;}
 </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <style>
+    .password-list {
+      list-style-type: none;
+    }
+  </style>
   <script>
     // Array of potential passwords
-    var passwords = ["HUNGRY", "BUZZED", "LOVELY", "HIJACK", "QUARTZ", "JOCKEY", "COMMON", "STONKS"];
+    var passwords = ["WORD1", "WORD2", "WORD3", "WORD4", "WORD5"];
 
     // Generate a random password from the array
     var password = passwords[Math.floor(Math.random() * passwords.length)];
@@ -30,16 +35,16 @@ color: Green;}
     function checkPassword(guess) {
       if (guess === password) {
         // Redirect to another website if the password is correct
-        window.location.href = "ABM2";
+        window.location.href = "https://www.example.com";
       } else {
         // Display an error message if the password is incorrect
         chancesLeft--;
         if (chancesLeft > 0) {
           $("#message").text("Incorrect password. " + chancesLeft + " chances remaining.");
           $("#password-input").val("");
-          generateRandomString();
+          generatePasswordList();
         } else {
-          $("#message").text("Terminal Locked. Please contact an administrator.");
+          $("#message").text("TERMINAL LOCKED. PLEASE CONTACT AN ADMINISTRATOR");
           $("#password-input").prop("disabled", true);
         }
       }
@@ -55,11 +60,24 @@ color: Green;}
     // Function to generate random string of 6 letters and numbers
     function generateRandomString() {
       var randomString = Math.random().toString(36).substring(2, 8).toUpperCase();
-      $("#random-string").text(randomString);
+      return randomString;
     }
 
-    // Generate initial random string
-    generateRandomString();
+    // Function to generate the password list with random strings
+    function generatePasswordList() {
+      var passwordList = $("#password-list");
+      passwordList.empty();
+      for (var i = 0; i < passwords.length; i++) {
+        passwordList.append("<li>" + passwords[i] + "</li>");
+        if (i !== passwords.length - 1) {
+          var randomString = generateRandomString();
+          passwordList.append("<li>" + randomString + "</li>");
+        }
+      }
+    }
+
+    // Generate initial password list
+    generatePasswordList();
   </script>
 </head>
 <body>
@@ -89,6 +107,7 @@ color: Green;}
 <h3>=========================================</h3>
 
 	  <p id="message">ENTER PASSWORD NOW:</p>
+  <ul id="password-list" class="password-list"></ul>
   <form onsubmit="return submitForm()">
     <input type="text" id="password-input">
     <input type="submit" value="Submit">

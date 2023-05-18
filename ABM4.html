@@ -43,48 +43,13 @@ color: Green;}
 
 
     
-    <div id="message">ENTER PASSWORD NOW:</div>
-    
-<h3>
-        0xF964 <a class="password">HUNGRY</a>
-        0xF965 <a class="password">BUZZED</a>
-        <br/>
-        0xF966 <a class="password">LOVELY</a>
-        0xF967 <a class="password">HIJACK</a>
-        <br/>
-        0xF968 <a class="password">QUARTZ</a>
-        0xF969 <a class="password">JOCKEY</a>
-        <br/>
-        0xF970 <a class="password">COMMON</a>
-        0xF971 <a class="password">STONKS</a>
-    </h3>
-    
-    <script>
-        var passwordAttempts = 0;
-        var password = "STONKS"; // Change this to the correct password
-        
-        // Attach click event listener to passwords
-        var passwords = document.getElementsByClassName("password");
-        for (var i = 0; i < passwords.length; i++) {
-            passwords[i].addEventListener("click", function() {
-                var selectedPassword = this.innerHTML;
-                if (selectedPassword === password) {
-                    // Redirect to another site when correct password is selected
-                    window.location.href = "ABM2.html"; // Change this to the desired redirect URL
-                } else {
-                    passwordAttempts++;
-                    if (passwordAttempts >= 4) {
-                        // Display "TERMINAL LOCKED" message when maximum attempts reached
-                        document.getElementById("message").innerHTML = "TERMINAL LOCKED. PLEASE CONTACT AN ADMINISTRATOR";
-                        // Disable password selection
-                        for (var j = 0; j < passwords.length; j++) {
-                            passwords[j].removeEventListener("click", arguments.callee);
-                        }
-                    }
-                }
-            });
-        }
-    </script>
+  <div class="terminal">
+    <div id="word-grid"></div>
+    <div id="feedback"></div>
+    <button onclick="selectWord()">Hack</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
  </body>

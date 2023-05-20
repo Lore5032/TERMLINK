@@ -46,7 +46,19 @@ color: Green;}
 
 	<h3>ENTER PASSWORD NOW:</h3>
     
-<div id="text"></div>
+    <h3>
+        0xF964 <a class="password">HUNGRY</a>
+        0xF965 <a class="password">BUZZED</a>
+        <br/>
+        0xF966 <a class="password">LOVELY</a>
+        0xF967 <a class="password">HIJACK</a>
+        <br/>
+        0xF968 <a class="password">QUARTZ</a>
+        0xF969 <a class="password">JOCKEY</a>
+        <br/>
+        0xF970 <a class="password">COMMON</a>
+        0xF971 <a class="password">STONKS</a>
+    </h3>
     
     <div id="message"></div>
  <h3>=========================================</h3>
@@ -75,7 +87,7 @@ color: Green;}
                         // Redirect back to index.html after 30 seconds
                         setTimeout(function() {
                             window.location.href = "index.html"; // Change this to the desired redirect URL
-                        }, 5000); // 30 seconds
+                        }, 5000); // 5 seconds
                     } else {
                         // Display attempts left message
                         document.getElementById("message").innerHTML = "Incorrect password. " + passwordAttempts + " attempt(s) remaining.";
@@ -84,29 +96,6 @@ color: Green;}
             });
         }
     </script>
-	
-	  <script>
-    const textElement = document.getElementById('text');"
-    const text = "0xF964 <a class="password">HUNGRY</a>0xF965 <a class="password">BUZZED</a>\n0xF966 <a class="password">LOVELY</a>0xF967 <a class="password">HIJACK</a>\n 0xF968 <a class="password">QUARTZ</a>0xF969 <a class="password">JOCKEY</a>\n0xF970 <a class="password">COMMON</a>\n0xF971 <a class="password">STONKS</a>.";
-
-    let index = 0;
-
-    function typeWriter() {
-      const char = text.charAt(index);
-      if (char === '\n') {
-        textElement.innerHTML += '<br>'; // Add line break
-      } else {
-        textElement.innerHTML += char;
-      }
-      index++;
-
-      if (index < text.length) {
-        setTimeout(typeWriter, Math.random() * 150 + 50); // Adjust the typing speed here
-      }
-    }
-
-    typeWriter();
-  </script>
 </body>
 </html>
  </body>

@@ -38,12 +38,23 @@
 
   <h3>=========================================</h3> 
   <div id="text"></div>
+	
+  <audio id="typeSound">
+    <source src="print.wav" type="audio/wav">
+  </audio>
 
   <script>
     const textElement = document.getElementById('text');
     const text = ">SET TERMINAL/INQUIRE\nRIT-V300\n>SET FILE/PROTECTION=OWNER:RWED ACCOUNTS:F\n>SET HALT RESTART/MAINT\nInitializing Winters Industries(TM) MF Boot Agent V2.7.1\nRETROS BIOS\nRBIOS-4.01.08.00 76EE5.E6.E9\nCOPYRIGHT 1987-1995 Winters IND.\nMEM: 1024 PB\nROOT (7R4)\nMAINTENANCE MODE\n\n>RUN DEBUG.ACCOUNTS:F";
 
+
     let index = 0;
+    const typeSound = document.getElementById('typeSound');
+
+    function playTypeSound() {
+      typeSound.currentTime = 0;
+      typeSound.play();
+    }
 
     function typeWriter() {
       const char = text.charAt(index);
@@ -51,6 +62,7 @@
         textElement.innerHTML += '<br>'; // Add line break
       } else {
         textElement.innerHTML += char;
+        playTypeSound(); // Play the typing sound
       }
       index++;
 

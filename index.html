@@ -37,8 +37,30 @@
   <p></p>
 
   <h3>=========================================</h3> 
-  <div id="demo"></div>
- <script src="typing.js"></script>
+  <div id="text"></div>
+
+  <script>
+    const textElement = document.getElementById('text');
+    const text = ">SET TERMINAL/INQUIRE\n>SET FILE/PROTECTION=OWNER:RWED ACCOUNTS:F\n>SET HALT RESTART/MAINT\nInitializing Winters Industries(TM) MF Boot Agent V2.7.1\nRETROS BIOS\nRBIOS-4.01.08.00 76EE5.E6.E9\nCOPYRIGHT 1987-1995 Winters IND.\nMEM: 1024 PB\nROOT (7R4)\nMAINTENANCE MODE\n\n>RUN DEBUG.ACCOUNTS:F";
+
+    let index = 0;
+
+    function typeWriter() {
+      const char = text.charAt(index);
+      if (char === '\n') {
+        textElement.innerHTML += '<br>'; // Add line break
+      } else {
+        textElement.innerHTML += char;
+      }
+      index++;
+
+      if (index < text.length) {
+        setTimeout(typeWriter, Math.random() * 150 + 50); // Adjust the typing speed here
+      }
+    }
+
+    typeWriter();
+  </script>
  <h3>=========================================</h3>
 </body>
 

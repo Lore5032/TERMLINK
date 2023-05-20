@@ -61,20 +61,16 @@ color: Green;}
     
     <script>
         var passwordAttempts = 4;
-        var password = "HIJACK"; // Change this to the correct password
+        var password = "STONKS"; // Change this to the correct password
         
         // Attach click event listener to passwords
         var passwords = document.getElementsByClassName("password");
         for (var i = 0; i < passwords.length; i++) {
             passwords[i].addEventListener("click", function() {
-                if (passwordAttempts === 0 {
-                    return; // Disallow clicking on passwords if passwordAttempts = 4
-                }
-                
                 var selectedPassword = this.innerHTML;
                 if (selectedPassword === password) {
                     // Redirect to another site when correct password is selected
-                    window.location.href = "ABM2.html"; // Change this to the desired redirect URL
+                    window.location.href = "ABM2"; // Change this to the desired redirect URL
                 } else {
                     passwordAttempts--;
                     if (passwordAttempts === 0) {
@@ -87,7 +83,7 @@ color: Green;}
                         // Redirect back to index.html after 30 seconds
                         setTimeout(function() {
                             window.location.href = "index.html"; // Change this to the desired redirect URL
-                        }, 5000); // 30 seconds
+                        }, 30000); // 30 seconds
                     } else {
                         // Display attempts left message
                         document.getElementById("message").innerHTML = "Incorrect password. " + passwordAttempts + " attempt(s) remaining.";

@@ -18,7 +18,7 @@ color: Green;}
 <body>
   <div class="audio-container">
       <audio class="audio" autoplay loop>
-      	<source src="hum2.wav" type="audio/wav"> <!-- Replace with your own sound file -->
+      	<source src="hum2.wav" type="audio/wav"> <!-- Sound. Likes to not play for some reason. Need to fix. -->
       </audio>
   </div>
 
@@ -65,18 +65,20 @@ color: Green;}
     
     <script>
         var passwordAttempts = 4;
-        var password = "STONKS"; // Change this to the correct password
+        var password = "STONKS"; // Change this to whatever password
         
         // Attach click event listener to passwords
         var passwords = document.getElementsByClassName("password");
         for (var i = 0; i < passwords.length; i++) {
             passwords[i].addEventListener("click", function() {
+                if (passwordAttempts === 0) {
+                    return; // Disallow clicking on passwords if passwordAttempts = 0
+                }
+                
                 var selectedPassword = this.innerHTML;
                 if (selectedPassword === password) {
-                    // Redirect to another site when correct password is selected
-		setTimeout(function() {	
-                    window.location.href = "SANANDREASPROJECT.html"; // Change this to the desired redirect URL
-		}, 4000); // 30 seconds
+                    // Redirect to another main page when correct password is selected
+                    window.location.href = "SANANDREASPROJECT.html"; // Redirect to next page
                 } else {
                     passwordAttempts--;
                     if (passwordAttempts === 0) {
@@ -88,11 +90,18 @@ color: Green;}
                         }
                         // Redirect back to index.html after 30 seconds
                         setTimeout(function() {
-                            window.location.href = "index.html"; // Change this to the desired redirect URL
-                        }, 5000); // 5 seconds
+                            window.location.href = "index.html"; // Redirect to restarting terminal
+                        }, 30000);
+                    } else if (passwordAttempts === 1) {
+                        // Display "LOCKOUT IMMINENT" message when one attempt left
+                        document.getElementById("message").innerHTML = "! ! ! WARNING : LOCKOUT IMMINENT ! ! !<br/>Incorrect password. " + passwordAttempts + " attempt(s) remaining.";
+                        // Play alert sound
+                        playAlertSound();
                     } else {
                         // Display attempts left message
                         document.getElementById("message").innerHTML = "Incorrect password. " + passwordAttempts + " attempt(s) remaining.";
+                        // Play alert sound
+                        playAlertSound();
                     }
                 }
             });

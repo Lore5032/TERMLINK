@@ -78,7 +78,9 @@ color: Green;}
                 var selectedPassword = this.innerHTML;
                 if (selectedPassword === password) {
                     // Redirect to another main page when correct password is selected
+			setTimeout(function() {
                     window.location.href = "SANANDREASPROJECT.html"; // Redirect to next page
+			 }, 5000);
                 } else {
                     passwordAttempts--;
                     if (passwordAttempts === 0) {
@@ -91,7 +93,7 @@ color: Green;}
                         // Redirect back to index.html after 30 seconds
                         setTimeout(function() {
                             window.location.href = "index.html"; // Redirect to restarting terminal
-                        }, 30000);
+                        }, 5000);
                     } else if (passwordAttempts === 1) {
                         // Display "LOCKOUT IMMINENT" message when one attempt left
                         document.getElementById("message").innerHTML = "! ! ! WARNING : LOCKOUT IMMINENT ! ! !<br/>Incorrect password. " + passwordAttempts + " attempt(s) remaining.";

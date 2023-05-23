@@ -12,9 +12,9 @@
 
 <body>
   <div class="audio-container">
-    <audio class="audio" autoplay loop>
-      <source src="hum2.wav" type="audio/wav"> <!-- Replace with your own sound file -->
-    </audio>
+      <audio class="audio" autoplay loop>
+      	<source src="hum2.wav" type="audio/wav"> <!-- Sound. Likes to not play for some reason. Need to fix. -->
+      </audio>
   </div>
 	<table style="text-align:center;">
 		<tr>
@@ -62,7 +62,7 @@
         textElement.innerHTML += '<br>'; // Add line break
       } else {
         textElement.innerHTML += char;
-        playTypeSound(); // Play the typing sound
+        playTypeSound(); // Play the typing sound. Buggy just like other sound. No fucking clue.
       }
       index++;
 

@@ -92,20 +92,17 @@ color: Green;}
                         for (var j = 0; j < passwords.length; j++) {
                             passwords[j].style.pointerEvents = "none";
                         }
-                        // Redirect back to index.html after 30 seconds
+                        // Redirect back to index.html after 5 seconds
                         setTimeout(function() {
                             window.location.href = "index.html"; // Redirect to restarting terminal
                         }, 5000);
                     } else if (passwordAttempts === 1) {
                         // Display "LOCKOUT IMMINENT" message when one attempt left
                         document.getElementById("message").innerHTML = "! ! ! WARNING : LOCKOUT IMMINENT ! ! !<br/>Incorrect password. " + passwordAttempts + " attempt(s) remaining.";
-                        // Play alert sound
-                        playAlertSound();
                     } else {
                         // Display attempts left message
                         document.getElementById("message").innerHTML = "Incorrect password. " + passwordAttempts + " attempt(s) remaining.";
-                        // Play alert sound
-                        playAlertSound();
+
                     }
                 }
             });

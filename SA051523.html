@@ -52,14 +52,101 @@
 
     <h3> &gt;&gt; Monday, May 15th, 2023</h3>
     <h4> &gt; Notes on the evening.</h4>
-  
-    <audio id="typeSound">
-    <source src="print.wav" type="audio/wav">
-  </audio>
 
+      <script>
+    const textElement = document.getElementById('text');
+    const text = "With Black Tusk now scattered to the winds, this city stands at a precipice. The shadows of corruption still linger, but the light of truth has shone upon them. We have exposed their malevolence for all to see. The fight is not over, for darkness will always strive to reclaim its dominion. But we will not yield. I will not yield.\nAs I pen these words in the early morning hours, I am reminded of the sacrifices made, the lives lost in our pursuit of justice. It is a heavy burden to bear, and sometimes I must force myself to remember every detail of the battles fought. But I must remain resolute, fueled by the hope that this city can be redeemed. I will not let it be consumed by its own darkness. The fight continues, and I am ready to face whatever comes next.";
+
+
+    let index = 0;
+    const typeSound = document.getElementById('typeSound');
+
+    function playTypeSound() {
+      typeSound.currentTime = 0;
+      typeSound.play();
+    }
+
+    function typeWriter() {
+      const char = text.charAt(index);
+      if (char === '\n') {
+        textElement.innerHTML += '<br>'; // Add line break
+      } else {
+        textElement.innerHTML += char;
+        playTypeSound(); // Play the typing sound
+      }
+      index++;
+
+      if (index < text.length) {
+        setTimeout(typeWriter, Math.random() * 150 + 50); // Adjust the typing speed here
+      }
+    }
+
+    typeWriter();
+  </script>
+  
   <script>
     const textElement = document.getElementById('text');
-    const text = "These nights blur together, a relentless rush of darkness and danger. Behind the mask, I exist as a force of vigilance, ever watchful over this city's twisted underbelly. Two years have transformed me into a nocturnal creature, attuned to the rhythms of the night. Each step I take, each target I choose, must be calculated with utmost precision. In this sprawling metropolis, I cannot be everywhere at once. But they don't know where I am. They never see me coming.\n Yet, despite my relentless efforts, I find myself grappling with doubt. I wish I could confidently declare that I am making a difference, that my actions have stemmed the tide of violence. But the truth is harsh and unforgiving. Murder, robberies, assault—they continue to plague this city, thriving under the weight of its own decay. It feels as though this city is devouring itself, consumed by its own darkness. Is it even possible to save it? I don't know. But I cannot give up. I must push myself further, beyond my limits, for the sake of those who still believe in the possibility of redemption.\n Today, a significant development unfolded. I took down Black Tusk, an insidious organization that has plagued this city with its malevolence. It all began during an interrogation with a man named Mikhail, a murderer. I was accompanied by Nick, a defector from Black Tusk. As we delved deeper into the interrogation, it became apparent that Mikhail was not just a murderer but a sleeper agent for Black Tusk. The revelation sent a shiver down my spine.\n Driven by a thirst for justice, I devised a plan. Using my undercover identity as The Knight, I infiltrated Black Tusk's base and placed a server cloning tool amidst their server stacks. With access to their systems, I navigated the virtual labyrinth, extracting valuable information. But the files I stumbled upon surpassed anything I had anticipated. Secrets, machinations, and sinister plots that extended far beyond my jurisdiction.\n In our audacity, we publicized the evidence we had uncovered. Black Tusk, sensing their vulnerability, resorted to hiring hitmen to eliminate both me and Nick. The ensuing battle was fierce, a symphony of violence and survival. We fought tooth and nail against the relentless onslaught, and in the end, we emerged victorious. However, victory came at a great cost. Nick and Leo Imamura, the acting head of Black Tusk, fell in the line of duty.\n With Black Tusk now scattered to the winds, this city stands at a precipice. The shadows of corruption still linger, but the light of truth has shone upon them. We have exposed their malevolence for all to see. The fight is not over, for darkness will always strive to reclaim its dominion. But we will not yield. I will not yield.\nAs I pen these words in the early morning hours, I am reminded of the sacrifices made, the lives lost in our pursuit of justice. It is a heavy burden to bear, and sometimes I must force myself to remember every detail of the battles fought. But I must remain resolute, fueled by the hope that this city can be redeemed. I will not let it be consumed by its own darkness. The fight continues, and I am ready to face whatever comes next.";
+    const text = "These nights blur together, a relentless rush of darkness and danger. Behind the mask, I exist as a force of vigilance, ever watchful over this city's twisted underbelly. Two years have transformed me into a nocturnal creature, attuned to the rhythms of the night. Each step I take, each target I choose, must be calculated with utmost precision. In this sprawling metropolis, I cannot be everywhere at once. But they don't know where I am. They never see me coming.\n Yet, despite my relentless efforts, I find myself grappling with doubt.";
+
+
+    let index = 0;
+    const typeSound = document.getElementById('typeSound');
+
+    function playTypeSound() {
+      typeSound.currentTime = 0;
+      typeSound.play();
+    }
+
+    function typeWriter() {
+      const char = text.charAt(index);
+      if (char === '\n') {
+        textElement.innerHTML += '<br>'; // Add line break
+      } else {
+        textElement.innerHTML += char;
+        playTypeSound(); // Play the typing sound
+      }
+      index++;
+
+      if (index < text.length) {
+        setTimeout(typeWriter, Math.random() * 150 + 50); // Adjust the typing speed here
+      }
+    }
+
+    typeWriter();
+  </script>
+    <script>
+    const textElement = document.getElementById('text');
+    const text = "The revelation sent a shiver down my spine.\n Driven by a thirst for justice, I devised a plan. Using my undercover identity as The Knight, I infiltrated Black Tusk's base and placed a server cloning tool amidst their server stacks. With access to their systems, I navigated the virtual labyrinth, extracting valuable information. But the files I stumbled upon surpassed anything I had anticipated. Secrets, machinations, and sinister plots that extended far beyond my jurisdiction.\n In our audacity, we publicized the evidence we had uncovered. Black Tusk, sensing their vulnerability, resorted to hiring hitmen to eliminate both me and Nick. The ensuing battle was fierce, a symphony of violence and survival. We fought tooth and nail against the relentless onslaught, and in the end, we emerged victorious. However, victory came at a great cost. Nick and Leo Imamura, the acting head of Black Tusk, fell in the line of duty.";
+
+
+    let index = 0;
+    const typeSound = document.getElementById('typeSound');
+
+    function playTypeSound() {
+      typeSound.currentTime = 0;
+      typeSound.play();
+    }
+
+    function typeWriter() {
+      const char = text.charAt(index);
+      if (char === '\n') {
+        textElement.innerHTML += '<br>'; // Add line break
+      } else {
+        textElement.innerHTML += char;
+        playTypeSound(); // Play the typing sound
+      }
+      index++;
+
+      if (index < text.length) {
+        setTimeout(typeWriter, Math.random() * 150 + 50); // Adjust the typing speed here
+      }
+    }
+
+    typeWriter();
+  </script>
+    <script>
+    const textElement = document.getElementById('text');
+    const text = "With Black Tusk now scattered to the winds, this city stands at a precipice. The shadows of corruption still linger, but the light of truth has shone upon them. We have exposed their malevolence for all to see. The fight is not over, for darkness will always strive to reclaim its dominion. But we will not yield. I will not yield.\nAs I pen these words in the early morning hours, I am reminded of the sacrifices made, the lives lost in our pursuit of justice. It is a heavy burden to bear, and sometimes I must force myself to remember every detail of the battles fought. But I must remain resolute, fueled by the hope that this city can be redeemed. I will not let it be consumed by its own darkness. The fight continues, and I am ready to face whatever comes next.";
 
 
     let index = 0;

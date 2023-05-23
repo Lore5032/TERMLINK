@@ -78,9 +78,11 @@ color: Green;}
                 var selectedPassword = this.innerHTML;
                 if (selectedPassword === password) {
                     // Redirect to another main page when correct password is selected
+			document.getElementById("message").innerHTML = "Exact match!<br/>Please wait while the system is accessed...";
 			setTimeout(function() {
                     window.location.href = "SANANDREASPROJECT.html"; // Redirect to next page
 			 }, 5000);
+			
                 } else {
                     passwordAttempts--;
                     if (passwordAttempts === 0) {

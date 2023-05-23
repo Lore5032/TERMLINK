@@ -16,9 +16,15 @@ color: Green;}
 </style>
 </head>
 <body>
+	
   <div class="audio-container">
       <audio class="audio" autoplay loop>
-      	<source src="hum2.wav" type="audio/wav"> <!-- Sound. Likes to not play for some reason. Need to fix. -->
+      	<source src="hum1.wav" type="audio/wav"> <!-- Sound. Likes to not play for some reason. Need to fix. -->
+      </audio>
+  </div>
+  <div class="audio-container">
+      <audio class="audio" autoplay loop>
+      	<source src="hum2.wav" type="audio/wav"> <!-- Same as above. -->
       </audio>
   </div>
 
@@ -78,7 +84,7 @@ color: Green;}
                 var selectedPassword = this.innerHTML;
                 if (selectedPassword === password) {
                     // Redirect to another main page when correct password is selected
-			document.getElementById("message").innerHTML = "Exact match!<br/>Please wait while the system is accessed...";
+			document.getElementById("message").innerHTML = "Exact match!<br/><br/>Please wait while the system is accessed...";
 			setTimeout(function() {
                     window.location.href = "SANANDREASPROJECT.html"; // Redirect to next page
 			 }, 5000);

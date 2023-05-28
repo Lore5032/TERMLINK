@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <meta charset="utf-8" />
+  <title>Winters Industries (TM) Termalink Protocol</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: Green;
+    }
+
+    a:hover {
+      background: Green;
+      color: Black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="audio-container">
+      <audio class="audio" autoplay loop>
+      	<source src="hum1.wav" type="audio/wav"> <!-- Sound. Likes to not play for some reason. Need to fix. -->
+      </audio>
+  </div>
+
+  <div class="audio-container">
+    <audio class="audio" autoplay loop>
+      <source src="hum2.wav" type="audio/wav"> <!-- Replace with your own sound file -->
+    </audio>
+  </div>
+
+  <table style="text-align:center;">
+    <tr>
+      <td>
+        WINTERS INDUSTRIES UNIFIED OPERATING SYSTEM
+      </td>
+    </tr>
+    <tr>
+      <td>
+        COPYRIGHT 1987-1995 WINTERS INDUSTRIES
+      </td>
+    </tr>
+    <tr>
+      <td>
+        --SERVER 1--
+      </td>
+    </tr>
+  </table>
+  <h3>ERROR 0x03C663A1</h3>
+  <h3>Network connection not found</h3>
+  <h3>Dummy terminal inactive</h3>
+    <h3>=========================================</h3>
+
+
+  
+  <h3>=========================================</h3>
+     <h4> <a href="SANANDREASPROJECT.html">(null)</a> </h4>
+  </body>
+</html>

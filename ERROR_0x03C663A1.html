@@ -20,17 +20,15 @@
 </head>
 
 <body>
-  <div class="audio-container">
-      <audio class="audio" autoplay loop>
-      	<source src="hum1.wav" type="audio/wav"> <!-- Sound. Likes to not play for some reason. Need to fix. -->
-      </audio>
-  </div>
+<audio id="soundEffect1" preload="auto" loop>
+  <source src="hum2.wav" type="audio/wav">
+</audio>
 
-  <div class="audio-container">
-    <audio class="audio" autoplay loop>
-      <source src="hum2.wav" type="audio/wav"> <!-- Replace with your own sound file -->
-    </audio>
-  </div>
+<audio id="soundEffect2" preload="auto" loop>
+  <source src="hum1.wav" type="audio/wav">
+</audio>
+	
+<script src="sound.js"></script>
 
   <table style="text-align:center;">
     <tr>

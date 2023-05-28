@@ -11,16 +11,13 @@
 </head>
 
 <body>
-   <div class="audio-container">
-      <audio class="audio" autoplay loop>
-      	<source src="hum1.wav" type="audio/wav"> <!-- Sound. Likes to not play for some reason. Need to fix. -->
-      </audio>
-  </div>
-  <div class="audio-container">
-      <audio class="audio" autoplay loop>
-      	<source src="hum2.wav" type="audio/wav"> <!-- Same as above. -->
-      </audio>
-  </div>
+<audio id="soundEffect2" preload="auto" loop>
+  <source src="hum2.wav" type="audio/wav">
+</audio>
+
+<audio id="soundEffect2" preload="auto" loop>
+  <source src="hum1.wav" type="audio/wav">
+</audio>
 	<table style="text-align:center;">
 		<tr>
 			<td>
@@ -47,6 +44,8 @@
   <audio id="typeSound">
     <source src="print.wav" type="audio/wav">
   </audio>
+	
+	<script src="script.js"></script>
 
   <script>
     const textElement = document.getElementById('text');

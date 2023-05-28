@@ -13,4 +13,4 @@ soundEffect2.volume = volumeLevel;
 soundEffect1.play();
 setTimeout(function() {
   soundEffect2.play();
-}, 400); // Delay of 0.5 seconds (500 milliseconds)
+}, 350); // Delay of 0.5 seconds (500 milliseconds)

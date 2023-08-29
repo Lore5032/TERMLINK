@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <meta charset="utf-8" />
+  <title>Winters Industries (TM) Termalink Protocol</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: Green;
+    }
+
+    a:hover {
+      background: Green;
+      color: Black;
+    }
+  </style>
+</head>
+
+<body>
+<audio id="soundEffect1" preload="auto" loop>
+  <source src="hum2.wav" type="audio/wav">
+</audio>
+
+<audio id="soundEffect2" preload="auto" loop>
+  <source src="hum1.wav" type="audio/wav">
+</audio>
+	
+<script src="sound.js"></script>
+
+  <table style="text-align:center;">
+    <tr>
+      <td>
+        WINTERS INDUSTRIES UNIFIED OPERATING SYSTEM
+      </td>
+    </tr>
+    <tr>
+      <td>
+        COPYRIGHT 1987-1995 WINTERS INDUSTRIES
+      </td>
+    </tr>
+    <tr>
+      <td>
+        --SERVER 1--
+      </td>
+    </tr>
+  </table>
+  <h3>[######]'s Terminal</h2>
+    <h3>=========================================</h3>
+
+    <h3> &gt;&gt; Monday, August 25th, 2023</h3>
+    <h4> &gt; Notes on the evening.</h4>
+
+  <div id="text"></div>
+  
+  <audio id="typeSound">
+    <source src="print.wav" type="audio/wav">
+  </audio>
+  
+    <script>
+    const textElement = document.getElementById('text');
+    const text = "I was approached today by a silent stranger with a box. He forced the box onto me, and after opening the box, which reaked of rotting meat, I found a number of pounds of jerky. After some labwork, I found the DNA of a suicide victim, John Doe. Body went missing as of a month ago, and as the jerky was tainted with the DNA, the suicide could theoretically be connected to the mysterious stranger. Time will tell.";
+
+
+    let index = 0;
+    const typeSound = document.getElementById('typeSound');
+
+    function playTypeSound() {
+      typeSound.currentTime = 0;
+      typeSound.play();
+    }
+
+    function typeWriter() {
+      const char = text.charAt(index);
+      if (char === '\n') {
+        textElement.innerHTML += '<br>'; // Add line break
+      } else {
+        textElement.innerHTML += char;
+        playTypeSound(); // Play the typing sound
+      }
+      index++;
+
+      if (index < text.length) {
+        setTimeout(typeWriter, Math.random() * 150 + 50); // Adjust the typing speed here
+      }
+    }
+
+    typeWriter();
+  </script>
+  
+  <h3>=========================================</h3>
+     <h4> <a href="SANANDREASPROJECT.html">&gt;--RETURN--&lt;</a> </h4>
+  </body>
+</html>
